@@ -1,0 +1,16 @@
+<button 
+  [type]="nativeType"
+  [class]="'btn' + (type ? ' btn-' + type : '') + (size ? ' btn-' + size : '') + ' ' + nativeClass"
+  [class.is-disabled]="disabled"
+  [class.is-loading]="loading"
+  [class.is-plain]="plain"
+  [class.is-round]="round"
+  [class.is-circle]="circle"
+  [class.is-block]="block"
+  [disabled]="disabled"
+  [type]="nativeType"
+  [style]="extendStyles()">
+  <i class="icon-loading" *ngIf="loading"></i>
+  <i [class]="'icon-' + icon" *ngIf="icon && !loading"></i>
+  <ng-content></ng-content>
+</button>
